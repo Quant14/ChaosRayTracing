@@ -1,6 +1,7 @@
 #include <fstream>
 #include <iostream>
 #include <time.h>
+#include <string>
 using namespace std;
 
 struct blocks {
@@ -23,7 +24,6 @@ void task1()
 	ppmFileStream << maxColorComponent << "\n";
 	struct blocks blocks;
 	int colN = 0, rowN = 0;
-
 	for (int row = 0; row < 4; row++) {
 		for (int col = 0; col < 4; col++) {
 			blocks.r[col][row] = rand() % 256;
@@ -31,16 +31,14 @@ void task1()
 			blocks.b[col][row] = rand() % 256;
 		}
 	}
-
 	for (int row = 0; row < imageHeight; row++) {
 		rowN = row / 270;
 		for (int col = 0; col < imageWidth; col++) {
 			colN = col / 480;
-			ppmFileStream << (blocks.r[colN][rowN] + rand() % 51) % 256 << " " << (blocks.g[colN][rowN] + rand() % 51) % 256 << " "<< (blocks.b[colN][rowN] + rand() % 51) % 256 << "\t";
+			ppmFileStream << to_string((blocks.r[colN][rowN] + rand() % 51) % 256) << " " << to_string((blocks.g[colN][rowN] + rand() % 51) % 256) << " "<< to_string((blocks.b[colN][rowN] + rand() % 51) % 256) << "\t";
 		}
 		ppmFileStream << "\n";
 	}
-
 	ppmFileStream.close();
 }
 
@@ -65,7 +63,7 @@ void task2()
 
 int main() {
 
-	//task1();
+	task1();
 
 	task2();
 
