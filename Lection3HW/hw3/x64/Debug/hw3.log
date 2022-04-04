@@ -1,0 +1,3 @@
+﻿  hw3.cpp
+C:\coding\Chaos Ray Tracing\hw3\hw3\hw3.cpp(30,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  hw3.vcxproj -> C:\coding\Chaos Ray Tracing\hw3\x64\Debug\hw3.exe
